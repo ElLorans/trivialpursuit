@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>Julewok Trivial Pursuit</title>
+    <title>Orens Trivial Pursuit</title>
 
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/gamepieces.css">
@@ -14,17 +14,17 @@
     <script type='text/javascript' src='dice-roller/d6.js'></script>
 </head>
 <body>
-  <div id="window-container">
+<div id="window-container">
     <div id="game-container">
 
         <div id="board-left">
-            <img id="logo" class="noselect" src="images/tpelogo.png" alt="" />
+            <!--            <img id="logo" class="noselect" src="images/tpelogo.png" alt="" />-->
 
-            <br />
+            <br/>
 
             <table id="score-table">
                 <tr>
-                    <th>Lag</th>
+                    <th>Teams</th>
                     <th>
                         <span id="w0" class="wedge wedge0" draggable="true" data-draggable="master-wedge">&#9660;</span>
                         <span id="w1" class="wedge wedge1" draggable="true" data-draggable="master-wedge">&#9660;</span>
@@ -34,69 +34,93 @@
                         <span id="w5" class="wedge wedge5" draggable="true" data-draggable="master-wedge">&#9660;</span>
                     </th>
                 </tr>
-                <tr><td id="p0" style="">Blå</td>       <td id="t0"></td></tr>
-                <tr><td id="p1" style="">Oransj</td>    <td id="t1"></td></tr>
-                <tr><td id="p2" style="">Rosa</td>      <td id="t2"></td></tr>
-                <tr><td id="p3" style="">Grønn</td>     <td id="t3"></td></tr>
-                <tr><td id="p4" style="">Gul</td>       <td id="t4"></td></tr>
-                <tr><td id="p5" style="">Brun</td>      <td id="t5"></td></tr>
+                <tr>
+                    <td id="p0" style="">Blue</td>
+                    <td id="t0"></td>
+                </tr>
+                <tr>
+                    <td id="p1" style="">Orange</td>
+                    <td id="t1"></td>
+                </tr>
+                <tr>
+                    <td id="p2" style="">Pink</td>
+                    <td id="t2"></td>
+                </tr>
+                <tr>
+                    <td id="p3" style="">Green</td>
+                    <td id="t3"></td>
+                </tr>
+                <tr>
+                    <td id="p4" style="">Yellow</td>
+                    <td id="t4"></td>
+                </tr>
+                <tr>
+                    <td id="p5" style="">Red</td>
+                    <td id="t5"></td>
+                </tr>
             </table>
 
-            <br />
+            <br/>
 
-         <!--    <table id="dice-table">
-                <tr>
-                    <td> -->
+            <!--    <table id="dice-table">
+                   <tr>
+                       <td> -->
 
-                        <div id="dice-table"><script type="text/javascript">
-                        D6.setBaseUrl('dice-roller/');
-                        D6.dice(1);
-                        D6.setButtonLabel('Trill terningen!');
-                        $('.die').css('width', '80px');
-                        D6.roll();
-                        </script>
-</div>
-                  <!--   </td>
-                </tr>
-            </table> -->
+            <div id="dice-table">
+                <script type="text/javascript">
+                    D6.setBaseUrl('dice-roller/');
+                    D6.dice(1);
+                    D6.setButtonLabel('Roll dice');
+                    $('.die').css('width', '80px');
+                    D6.roll();
+                </script>
+            </div>
 
-            <br />
+
+            <br/>
 
         </div>
 
         <div id="board-right">
-            <img id="board" class="noselect" data-draggable="target" src="images/trivpur3.png" alt="" style="float: left; margin: 0 auto;" />
+            <img id="board" class="noselect" data-draggable="target" src="images/trivpur3.png" alt=""
+                 style="float: left; margin: 0 auto;"/>
         </div>
         <div>
- <!--            <div id="pieces-table" style="float:right; ">
-                
-            <div id="p0" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:blue"></div>
-            <div id="p1" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:darkorange"></div>
-            <div id="p2" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:deeppink"></div>
-            <div id="p3" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:green"></div>
-            <div id="p4" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:gold"></div>
-            <div id="p5" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:brown"></div>
-            </div> -->
+            <!--            <div id="pieces-table" style="float:right; ">
+
+                       <div id="p0" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:blue"></div>
+                       <div id="p1" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:darkorange"></div>
+                       <div id="p2" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:deeppink"></div>
+                       <div id="p3" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:green"></div>
+                       <div id="p4" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:gold"></div>
+                       <div id="p5" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:brown"></div>
+                       </div> -->
 
             <table id="pieces-table">
                 <tr>
                     <td>
-                        <div id="p0" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:blue"></div>
+                        <div id="p0" class="gamepiece" draggable="true" data-draggable="gamepiece"
+                             style="background-color:blue"></div>
                     </td>
                     <td>
-<div id="p1" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:darkorange"></div>
+                        <div id="p1" class="gamepiece" draggable="true" data-draggable="gamepiece"
+                             style="background-color:darkorange"></div>
                     </td>
                     <td>
-                        <div id="p2" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:deeppink"></div>
+                        <div id="p2" class="gamepiece" draggable="true" data-draggable="gamepiece"
+                             style="background-color:deeppink"></div>
                     </td>
                     <td>
-                        <div id="p3" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:green"></div>
+                        <div id="p3" class="gamepiece" draggable="true" data-draggable="gamepiece"
+                             style="background-color:green"></div>
                     </td>
                     <td>
-                        <div id="p4" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:gold"></div>
+                        <div id="p4" class="gamepiece" draggable="true" data-draggable="gamepiece"
+                             style="background-color:gold"></div>
                     </td>
                     <td>
-                        <div id="p5" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:brown"></div>
+                        <div id="p5" class="gamepiece" draggable="true" data-draggable="gamepiece"
+                             style="background-color:brown"></div>
                     </td>
                 </tr>
             </table>
@@ -109,7 +133,8 @@
             <img id="p5" class="gamepiece" draggable="true" data-draggable="gp" src="images/p5.png" alt="" />
         </div>-->
 
+        </div>
     </div>
-  </div>
+</div>
 </body>
 </html>
