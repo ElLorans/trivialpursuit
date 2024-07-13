@@ -5,4 +5,4 @@ A simple, custom game board for <a href="http://en.wikipedia.org/wiki/Trivial_Pu
 
 The game board and logo are a custom design because this was created for a specific event, but it should be fairly easy to swap in your own.
 
-View this project <a href="http://teknolai.github.io/trivialpursuit/">here</a>
+View this project <a href="http://ellorans.github.io/trivialpursuit/">here</a>
