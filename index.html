@@ -8,10 +8,12 @@
     <link rel="stylesheet" type="text/css" href="css/gamepieces.css">
     <link rel="stylesheet" type="text/css" href="css/wedges.css">
     <link rel="stylesheet" type="text/css" href="css/game.css">
+    <link rel="stylesheet" type="text/css" href="css/get_question.css">
 
     <script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="scripts/gamescripts.js"></script>
     <script type='text/javascript' src='dice-roller/d6.js'></script>
+    <script type='text/javascript' src='scripts/trivia.js'></script>
 </head>
 <body>
 <div id="window-container">
@@ -62,10 +64,6 @@
 
             <br/>
 
-            <!--    <table id="dice-table">
-                   <tr>
-                       <td> -->
-
             <div id="dice-table">
                 <script type="text/javascript">
                     D6.setBaseUrl('dice-roller/');
@@ -78,7 +76,44 @@
 
 
             <br/>
+            <div id="dice-table" style="display: flex;
+                                        justify-content: center;
+                                        align-items: center;"
+            >
+                <button onclick="document.getElementById('popup').style.display='block'">
+                    Get question
+                </button>
 
+                <div id="popup" class="popup">
+                    <div class="popup-content">
+                        <span class="close"
+                              onclick="document.getElementById('popup').style.display='none'">&times;</span>
+                        <h2>Select a Category</h2>
+                        <select id="categorySelect">
+                            <option>Geography</option>
+                            <option>Entertainment</option>
+                            <option>History</option>
+                            <option>Art and Literature</option>
+                            <option>Science and Nature</option>
+                            <option>Sports and Leisure</option>
+                        </select>
+                        <button onclick="function getRandomQuestion() {
+                            const selectedCategory = document.getElementById('categorySelect').value;
+                            const categoryQuestions = questions[selectedCategory];
+                            const questionKeys = Object.keys(categoryQuestions);
+                            const randomIndex = Math.floor(Math.random() * questionKeys.length);
+                            const randomQuestion = questionKeys[randomIndex];
+                            window.alert(randomQuestion);
+                            const randomAnswer = categoryQuestions[randomQuestion];
+                            window.alert(randomAnswer);
+                        }
+                        getRandomQuestion()">
+                            Get Question
+                        </button>
+                        <div id="questionDisplay"></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="board-right">
