@@ -13,7 +13,8 @@
     <script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="scripts/gamescripts.js"></script>
     <script type='text/javascript' src='dice-roller/d6.js'></script>
-    <script type='text/javascript' src='scripts/trivia.js'></script>
+    <script type='text/javascript' src='scripts/questions.js'></script>
+    <script type='text/javascript' src='scripts/quiz.js'></script>
 </head>
 <body>
 <div id="window-container">
@@ -70,6 +71,10 @@
                     D6.dice(1);
                     D6.setButtonLabel('Roll dice');
                     $('.die').css('width', '80px');
+                    $(document).on('click', '.die', function () {
+                        D6AnimBuilder.get('dice').reset();
+                        D6AnimBuilder.get('dice').start();
+                    });
                     D6.roll();
                 </script>
             </div>
@@ -97,17 +102,7 @@
                             <option>Science and Nature</option>
                             <option>Sports and Leisure</option>
                         </select>
-                        <button onclick="function getRandomQuestion() {
-                            const selectedCategory = document.getElementById('categorySelect').value;
-                            const categoryQuestions = questions[selectedCategory];
-                            const questionKeys = Object.keys(categoryQuestions);
-                            const randomIndex = Math.floor(Math.random() * questionKeys.length);
-                            const randomQuestion = questionKeys[randomIndex];
-                            window.alert(randomQuestion);
-                            const randomAnswer = categoryQuestions[randomQuestion];
-                            window.alert(randomAnswer);
-                        }
-                        getRandomQuestion()">
+                        <button onclick="getRandomQuestion()">
                             Get Question
                         </button>
                         <div id="questionDisplay"></div>
@@ -121,16 +116,6 @@
                  style="float: left; margin: 0 auto;"/>
         </div>
         <div>
-            <!--            <div id="pieces-table" style="float:right; ">
-
-                       <div id="p0" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:blue"></div>
-                       <div id="p1" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:darkorange"></div>
-                       <div id="p2" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:deeppink"></div>
-                       <div id="p3" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:green"></div>
-                       <div id="p4" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:gold"></div>
-                       <div id="p5" class="gamepiece" draggable="true" data-draggable="gamepiece" style="background-color:brown"></div>
-                       </div> -->
-
             <table id="pieces-table">
                 <tr>
                     <td>
@@ -160,16 +145,10 @@
                 </tr>
             </table>
 
-            <!--<img id="p0" class="gamepiece" draggable="true" data-draggable="gp" src="images/p0.png" alt="" />
-            <img id="p1" class="gamepiece" draggable="true" data-draggable="gp" src="images/p1.png" alt="" />
-            <img id="p2" class="gamepiece" draggable="true" data-draggable="gp" src="images/p2.png" alt="" />
-            <img id="p3" class="gamepiece" draggable="true" data-draggable="gp" src="images/p3.png" alt="" />
-            <img id="p4" class="gamepiece" draggable="true" data-draggable="gp" src="images/p4.png" alt="" />
-            <img id="p5" class="gamepiece" draggable="true" data-draggable="gp" src="images/p5.png" alt="" />
-        </div>-->
-
         </div>
     </div>
+
+
 </div>
 </body>
 </html>
