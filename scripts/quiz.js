@@ -12,7 +12,7 @@ function getRandomQuestion() {
     // Display the question in the popup
     const questionDisplayDiv = document.getElementById('questionDisplay');
     questionDisplayDiv.innerHTML = `
-        <p>Difficulty: ${randomQuestion["difficulty"]}</p>
+        <p>Difficulty: <span data-difficulty="${randomQuestion["difficulty"]}">${randomQuestion["difficulty"]}</span></p>
         <details>
             <summary>Question</summary>
             ${questionText}

@@ -42,6 +42,11 @@
     font-weight: bold;
 }
 
+
+details summary::-webkit-details-marker {
+    display: none; /* Removes default triangle marker in WebKit browsers */
+}
+
 details {
     border: 1px solid #aaa;
     border-radius: 4px;
@@ -53,6 +58,7 @@ summary {
     font-weight: bold;
     margin: -0.5em -0.5em 0;
     padding: 0.5em;
+    cursor: pointer; /* Adds a pointer cursor to indicate it is clickable */
 }
 
 details[open] {
@@ -73,4 +79,16 @@ summary::before {
 
 details[open] summary::before {
     transform: rotate(90deg);
+}
+
+span[data-difficulty="easy"] {
+    color: green;
+}
+
+span[data-difficulty="medium"] {
+    color: orange;
+}
+
+span[data-difficulty="hard"] {
+    color: red;
 }
